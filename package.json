@@ -13,6 +13,7 @@
   "devDependencies": {
     "@babel/core": "^7.12.16",
     "@babel/preset-react": "^7.12.13",
+    "babel-polyfill": "^6.26.0",
     "eslint": "^7.18.0",
     "eslint-config-prettier": "^8.1.0",
     "eslint-plugin-import": "^2.22.1",
@@ -26,7 +27,7 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
   },
-  "browserlist": [
+  "browserslist": [
     "last 2 Chrome versions"
   ]
 }
