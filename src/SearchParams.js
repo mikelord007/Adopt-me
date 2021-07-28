@@ -11,6 +11,7 @@ const SearchParams = () => {
   const [breed, setBreed] = useState("");
   const [pets, setPets] = useState([]);
   const breeds = useBreedList(animal);
+  console.log("breeds", breeds);
 
   useEffect(() => {
     requestPets();
@@ -22,14 +23,19 @@ const SearchParams = () => {
     );
     const json = await res.json();
 
-    console.log(json);
+    console.log("jsonresponse:", json);
 
     setPets(json.pets);
   }
 
   return (
     <div className="search-params">
-      <form>
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          requestPets();
+        }}
+      >
         <label htmlFor="location">
           Location
           <input
@@ -67,7 +73,7 @@ const SearchParams = () => {
             onBlur={(e) => setBreed(e.target.value)}
           >
             <option value=""></option>
-            {breeds.map((breed) => (
+            {breeds[0].map((breed) => (
               <option value={breed} key={breed}>
                 {breed}
               </option>
@@ -76,14 +82,7 @@ const SearchParams = () => {
         </label>
         <button>Submit</button>
       </form>
-      {pets.map((pet) => (
-        <Pet
-          name={pet.name}
-          breed={pet.breed}
-          animal={pet.animal}
-          key={pet.id}
-        />
-      ))}
+      <Results prop/>
     </div>
   );
 };
