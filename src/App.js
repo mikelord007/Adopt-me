@@ -2,7 +2,7 @@ import { StrictMode } from "react";
 import ReactDOM from "react-dom";
 import SearchParams from "./SearchParams";
 import Details from "./Details";
-import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 
 // const App = () => {
 //   return React.createElement("div", {id:"hello"}, [
@@ -36,9 +36,9 @@ const App = () => {
         </header>
         <Switch>
           <Route path="/details/:id">
-            <Details/>
-          </Route >
-          <Route path= "/">
+            <Details />
+          </Route>
+          <Route path="/">
             <SearchParams />
           </Route>
         </Switch>
@@ -46,4 +46,9 @@ const App = () => {
     </div>
   );
 };
-ReactDOM.render(<StrictMode><App /></StrictMode>, document.getElementById("root"));
+ReactDOM.render(
+  <StrictMode>
+    <App />
+  </StrictMode>,
+  document.getElementById("root")
+);
