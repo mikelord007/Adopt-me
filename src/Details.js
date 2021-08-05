@@ -21,17 +21,19 @@ class Details extends Component {
     );
   }
 
-  handleIndexClick(event){
-    this.setState({})
+  handleIndexClick(event) {
+    this.setState({});
   }
 
   render() {
-    const { animal, breed, city, state, description, name, images } = this.state;
+    const { animal, breed, city, state, description, name, images } =
+      this.state;
+
+    throw new Error("hi");
 
     if (this.state.loading) {
       return <h2>loading … </h2>;
     }
-
 
     return (
       <div className="details">
@@ -55,7 +57,7 @@ const DetailsWithRouter = withRouter(Details);
 export default function DetailsWithBoundary() {
   return (
     <ErrorBoundary>
-      <DetailsWithRouter/>
+      <DetailsWithRouter />
     </ErrorBoundary>
   );
-};
+}
